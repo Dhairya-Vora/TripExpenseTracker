@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add expense</title>
+     <style>
+         table {
+
+                  border-collapse: collapse;
+                  border: 1px solid black;
+                }
+
+        th, td {
+              padding: 8px;
+              text-align: center;
+              border: 1px solid black;
+            }
+
+        body {
+          background-size: cover;
+          background-repeat: no-repeat;
+          font-family: Arial, sans-serif;
+          color: black;
+
+        }
+
+
+  </style>
+</head>
+<body>
+<center><h1>GOA Expense Tracker</h1></center>
+<form method="POST">
+    {% csrf_token %}
+<h2><center><table>
+    <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Remarks</th>
+    <th>Amount</th>
+        <th>Submit</th>
+    </tr>
+    <tr>
+        <td>
+            <select name="name">
+                    <option value="Dhairya">Dhairya</option>
+                    <option value="Kalp">Kalp</option>
+                    <option value="Kush">Kush</option>
+                    <option value="Param">Param</option>
+            </select>
+        </td>
+        <td>
+            <select name="type">
+                    <option value="Food">Food</option>
+                    <option value="Taxi">Taxi</option>
+                    <option value="Water">Water</option>
+                    <option value="Other">Other</option>
+            </select>
+        </td>
+        <td>
+            <input type="text" name="remarks">
+        </td>
+        <td>
+            <input type="number" name="amount">
+        </td>
+        <td>
+            <input type="submit">
+        </td>
+    </tr>
+
+
+</table>
+
+</center>
+</h2>
+</form>
+    <center><button onclick="location.href='{% url 'expense_list' %}'">View All Expenses</button></center>
+</body>
+</html>
